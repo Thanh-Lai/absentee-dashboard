@@ -3,7 +3,10 @@ import * as data from './students.json';
 import * as placeHolderData from './placeholder.json';
 import Container from '@material-ui/core/Container';
 import InputRange from 'react-input-range';
-import { validate } from '@babel/types';
+import 'react-input-range/lib/css/index.css';
+import Datasort from 'react-data-sort';
+import TableHead from './tableHead';
+import StudentList from './studentList';
 
 export default class Dashboard extends Component {
     constructor() {
@@ -18,20 +21,33 @@ export default class Dashboard extends Component {
         this.formatSlide = this.formatSlide.bind(this);
     }
 
+    componentDidMount() {
+        const temp = []
+        for (let i = 0; i < this.state.studentData.length; i++) {
+            const student = this.state.studentData[i]
+            const absenteeRate = Math.round(100 - student.attendancePercentage)
+            if (student.status === 'Active' && absenteeRate >= 0 && absenteeRate <= 100) {
+                temp.push(student);
+            }
+        }
+        this.setState({ filteredStudents: temp })
+    }
+
     handleRateChange = (value) => {
         this.setState({
-            rate: validate,
+            rate: value,
             changedPage: true
-        })
+        });
     }
 
     formatSlide = (value) => {
-        return `${value}%`
+        return `${value}%`;
     }
 
     render() {
+        const style = { border: "1px solid black", width: "1250px" };
         const { min, max } = this.state.rate;
-        let filteredStudents = []
+        let filteredStudents = [];
         const handleChangeComplete = (students, min, max) => {
             let count = 0;
             for (let i = 0; i < students.length; i++) {
@@ -63,8 +79,54 @@ export default class Dashboard extends Component {
                     value={this.state.rate}
                     onChange={this.handleRateChange}
                     formatLabel={this.formatSlide}
-                    onChangeComplete={handleChangeComplete(this.state.studentData, min, max)}>
-                </InputRange>
+                    onChangeComplete={handleChangeComplete(this.state.studentData, min, max)}/>
+    
+                <br /> <br />
+                <Datasort
+                    data={filteredStudents}
+                    pages={this.state.pages}
+                    paginate
+                    itemsPerPage={25}
+                    defaultSortBy="attendancePercentage"
+                    render={({
+                        data,
+                        setSortBy,
+                        sortBy,
+                        direction,
+                        toggleDirection,
+                        activePage,
+                        goToPage,
+                        nextPage,
+                        prevPage,
+                        pages
+                    }) => (
+                            <div>
+                                <table id="table" style={style}>
+                                    <TableHead
+                                        setSortBy={setSortBy}
+                                        sortBy={sortBy}
+                                        direction={direction}
+                                        toggleDirection={toggleDirection}>
+                                    </TableHead>
+                                    <tbody>
+                                        {
+                                            data.map(student => {
+                                                return (
+                                                    <StudentList
+                                                        key={student.studentId}
+                                                        student={student}>
+                                                    </StudentList>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        )}
+                >>
+
+                </Datasort>
             </Container>
         )
     }
