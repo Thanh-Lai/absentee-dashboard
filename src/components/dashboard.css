@@ -1,0 +1,16 @@
+.input-range__label {
+    color: black;
+    font-size: 15px;
+}
+
+.input-range--disabled {
+    background: black;
+}
+
+#dashboard-head {
+    background-color: #3f51b5;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+

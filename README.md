@@ -1,8 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Student Absentee Dashboard
 
-In the project directory, you can run:
+Create a principal and guidance-counselor facing
+dashboard from the provided dataset that assists in identifying students who are chronically
+absent (missing X% or more of school days) for targeted interventions by guidance counselors
+(e.g. parent conferences, SMS messages sent, phone calls home, etc).
+
+    ● Displays a list of students who are chronically absent, including the data points from the
+    data set you feel would be useful and relevant to view alongside each student.
+    ● Allows the principal or guidance counselor to adjust the threshold for what it means to be
+    chronically absent. Upon modifying the threshold, the list of students should change.
+
+## Technologies used
+    - React
+        - React Material UI
+        - react-input-range
+        - react-input-range
+    - Node
+
+## Links
+[GitHub]: https://github.com/Thanh-Lai/absentee-dashboard
+[Walkthrough]: http://www.reddit.com
+
+
+## Getting started
+
+To get started:
+
+```
+git clone https://github.com/Thanh-Lai/absentee-dashboard
+npm install
+```
 
 ### `npm start`
 
@@ -29,40 +57,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
