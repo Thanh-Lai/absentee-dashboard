@@ -8,6 +8,10 @@ import Datasort from 'react-data-sort';
 import TableHead from './tableHead';
 import StudentList from './studentList';
 import './dashboard.css';
+import Pages from './pages';
+import GoToPage from './goToPage';
+import Navigation from './navigation';
+import PageIndicator from './pageIndicator';
 
 export default class Dashboard extends Component {
     constructor() {
@@ -80,8 +84,8 @@ export default class Dashboard extends Component {
                     value={this.state.rate}
                     onChange={this.handleRateChange}
                     formatLabel={this.formatSlide}
-                    onChangeComplete={handleChangeComplete(this.state.studentData, min, max)}/>
-    
+                    onChangeComplete={handleChangeComplete(this.state.studentData, min, max)} />
+
                 <br /> <br />
                 <Datasort
                     data={filteredStudents}
@@ -122,11 +126,19 @@ export default class Dashboard extends Component {
                                         }
                                     </tbody>
                                 </table>
-
+                                <Pages style={{ justifyContent: 'space-between' }}>
+                                    <GoToPage goToPage={goToPage} pages={this.state.pages || 1} />
+                                    <PageIndicator pages={this.state.pages || 1} activePage={activePage} />
+                                    <Navigation
+                                        activePage={activePage}
+                                        goToPage={goToPage}
+                                        nextPage={nextPage}
+                                        prevPage={prevPage}
+                                        pages={this.state.pages || 1}
+                                    />
+                                </Pages>
                             </div>
-                        )}
-                >>
-
+                        )}>
                 </Datasort>
             </Container>
         )
