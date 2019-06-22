@@ -19,8 +19,8 @@ absent (missing X% or more of school days) for targeted interventions by guidanc
     - Node
 
 ## Links
-[GitHub]: https://github.com/Thanh-Lai/absentee-dashboard
-[Walkthrough]: http://www.reddit.com
+[GitHub](https://github.com/Thanh-Lai/absentee-dashboard)
+[WalkThrough](https://www.youtube.com/watch?v=k2QrNapvalc&feature=youtu.be)
 
 
 ## Getting started
