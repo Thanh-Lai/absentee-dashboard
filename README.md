@@ -15,7 +15,7 @@ absent (missing X% or more of school days) for targeted interventions by guidanc
     - React
         - React Material UI
         - react-input-range
-        - react-input-range
+        - react-data-sort
     - Node
 
 ## Links
