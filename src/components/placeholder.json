@@ -1,0 +1,21 @@
+[  {
+    "firstName": "",
+    "lastName": "",
+    "studentId": "",
+    "schoolName": "",
+    "schoolId": "",
+    "district": "",
+    "email": "",
+    "grade": null,
+    "cohort": 0,
+    "attendancePercentage": 100,
+    "guidanceCounselor": "",
+    "guidanceCounselorEmail": "",
+    "homePhoneNumber": "",
+    "advisor": "",
+    "officialClass": "",
+    "totalCreditsEarned": 0,
+    "hasPassedRegents": true,
+    "status": "Active",
+    "adminDate": ""
+  }]

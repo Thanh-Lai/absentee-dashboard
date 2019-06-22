@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import * as data from './students/json';
+import * as data from './students.json';
+import * as placeHolderData from './placeholder.json';
 
 export default class Dashboard extends Component {
     constructor() {
