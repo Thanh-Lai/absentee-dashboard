@@ -7,6 +7,7 @@ import 'react-input-range/lib/css/index.css';
 import Datasort from 'react-data-sort';
 import TableHead from './tableHead';
 import StudentList from './studentList';
+import './dashboard.css';
 
 export default class Dashboard extends Component {
     constructor() {
@@ -68,10 +69,10 @@ export default class Dashboard extends Component {
         }
         return (
             <Container>
-                <h1>Student Absentee Rate</h1>
+                <nav id="dashboard-head">Student Absentee Dashboard</nav>
                 <br />
                 <h2>Absentee Rate: </h2>
-                <br /><br />
+                <br />
                 <InputRange
                     maxValue={100}
                     minValue={0}
