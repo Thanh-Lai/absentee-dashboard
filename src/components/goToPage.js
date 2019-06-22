@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Go to individual page directly
 export default function GoToPage({ goToPage, pages}) {
     const options = []
     for(let i = 0; i < pages; i++) {
@@ -7,4 +8,3 @@ export default function GoToPage({ goToPage, pages}) {
     }
     return <div>Go to page <select onChange={e => goToPage(parseInt(e.target.value))}>{options}</select></div>
   }
-  

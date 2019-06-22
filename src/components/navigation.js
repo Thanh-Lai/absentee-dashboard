@@ -2,6 +2,7 @@ import React from 'react';
 import Pages from './pages';
 import './navigation.css';
 
+// Nagigation buttons to go to next or prev page and first or last page
 export default function Navigation({ activePage, goToPage, nextPage, prevPage, pages }) {
 
     return (

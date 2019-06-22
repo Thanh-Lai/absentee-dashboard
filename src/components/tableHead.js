@@ -1,6 +1,7 @@
 import React from 'react';
 import HeadToggle from './headToggle';
 
+// Set table head and sort
 export default function TableHead(props) {
     const styleHead = { color: 'white', backgroundColor: 'black' };
     const style = { border: "1px solid black",align: "center" };

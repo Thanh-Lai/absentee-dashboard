@@ -25,7 +25,7 @@ export default class Dashboard extends Component {
         this.handleRateChange = this.handleRateChange.bind(this);
         this.formatSlide = this.formatSlide.bind(this);
     }
-
+    // Set filtered students active on mount
     componentDidMount() {
         const temp = []
         for (let i = 0; i < this.state.studentData.length; i++) {
@@ -37,14 +37,14 @@ export default class Dashboard extends Component {
         }
         this.setState({ filteredStudents: temp })
     }
-
+    // Update absentee rate on change
     handleRateChange = (value) => {
         this.setState({
             rate: value,
             changedPage: true
         });
     }
-
+    // Format Label
     formatSlide = (value) => {
         return `${value}%`;
     }
@@ -53,6 +53,7 @@ export default class Dashboard extends Component {
         const style = { border: "1px solid black", width: "1250px" };
         const { min, max } = this.state.rate;
         let filteredStudents = [];
+        // Update filtered students based on active, min and max percentage range
         const handleChangeComplete = (students, min, max) => {
             let count = 0;
             for (let i = 0; i < students.length; i++) {
@@ -64,9 +65,10 @@ export default class Dashboard extends Component {
                 }
             }
             if (filteredStudents.length === 0) {
+                // If there are no students use place holder data
                 filteredStudents = placeHolderData.default;
             }
-
+            // Update number of pages based on 25 items per page
             if (this.state.changedPage) {
                 this.setState({ pages: Math.ceil(count / 25), changedPage: false });
             }
@@ -77,6 +79,7 @@ export default class Dashboard extends Component {
                 <br />
                 <h2>Absentee Rate: </h2>
                 <br />
+                {/* Absentee rate slider */}
                 <InputRange
                     maxValue={100}
                     minValue={0}
@@ -87,6 +90,7 @@ export default class Dashboard extends Component {
                     onChangeComplete={handleChangeComplete(this.state.studentData, min, max)} />
 
                 <br /> <br />
+                {/* Student table with sorting and pagination feature */}
                 <Datasort
                     data={filteredStudents}
                     pages={this.state.pages}
@@ -126,6 +130,7 @@ export default class Dashboard extends Component {
                                         }
                                     </tbody>
                                 </table>
+                                {/* Paginate pages with navigation to each page */}
                                 <Pages style={{ justifyContent: 'space-between' }}>
                                     <GoToPage goToPage={goToPage} pages={this.state.pages || 1} />
                                     <PageIndicator pages={this.state.pages || 1} activePage={activePage} />

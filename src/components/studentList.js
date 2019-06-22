@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Maps each student info and fill body with data points
 export default function StudentList(props) {
     const dataStyle = { border: '1px solid black', backgroundColor: '#e6e6ff', textAlign: 'center' };
     const absenteeRate = Math.round(100 - props.student.attendancePercentage)
