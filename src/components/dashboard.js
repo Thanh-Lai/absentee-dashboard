@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as data from './students.json';
 import * as placeHolderData from './placeholder.json';
+import Container from '@material-ui/core/Container'
 
 export default class Dashboard extends Component {
     constructor() {
@@ -13,6 +14,10 @@ export default class Dashboard extends Component {
         }
     }
     render() {
-        return <h1>Hi</h1>
+        return (
+            <Container>
+                <h1>Student Absentee Rate</h1>
+            </Container>
+        )
     }
 }
