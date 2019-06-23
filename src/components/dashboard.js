@@ -27,10 +27,10 @@ export default class Dashboard extends Component {
     }
     // Set filtered students active on mount
     componentDidMount() {
-        const temp = []
+        const temp = [];
         for (let i = 0; i < this.state.studentData.length; i++) {
-            const student = this.state.studentData[i]
-            const absenteeRate = Math.round(100 - student.attendancePercentage)
+            const student = this.state.studentData[i];
+            const absenteeRate = Math.round(100 - student.attendancePercentage);
             if (student.status === 'Active' && absenteeRate >= 0 && absenteeRate <= 100) {
                 temp.push(student);
             }
@@ -57,8 +57,8 @@ export default class Dashboard extends Component {
         const handleChangeComplete = (students, min, max) => {
             let count = 0;
             for (let i = 0; i < students.length; i++) {
-                const student = students[i]
-                const absenteeRate = Math.round(100 - student.attendancePercentage)
+                const student = students[i];
+                const absenteeRate = Math.round(100 - student.attendancePercentage);
                 if (student.status === 'Active' && absenteeRate >= min && absenteeRate <= max) {
                     filteredStudents.push(student);
                     count++;
